@@ -11,8 +11,8 @@
 
 ## 脚本使用
 ```shell
-~# python3 yisaitong.py -h
-usage: yisaitong.py [-h] [-u URL] [-c CMD] [-f FILE]
+~# python3 yisaitong-exp.py -h
+usage: yisaitong-exp.py [-h] [-u URL] [-c CMD] [-f FILE] [-k SKIP]
 
 亿赛通rce利用工具
 
@@ -21,4 +21,9 @@ optional arguments:
   -u URL, --url URL     指定单个url
   -c CMD, --cmd CMD     要执行的命令
   -f FILE, --file FILE  指定要测试的urls文件
+  -k SKIP, --skip SKIP  跳过core_name
+```
+
+```shell
+
 ```
