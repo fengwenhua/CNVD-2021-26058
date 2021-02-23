@@ -87,7 +87,7 @@ if __name__ == '__main__':
         print("Usage: python3 yisaitong-poc.py -u url -f url.txt")
         sys.exit()
     parser = argparse.ArgumentParser(
-        description='亿赛通rce利用工具')
+        description='亿赛通rce poc工具-不一定有漏洞')
     parser.add_argument('-u', '--url', help='指定单个url')
     parser.add_argument('-f', '--file', help='指定要测试的urls文件')
     args = parser.parse_args()
