@@ -25,5 +25,13 @@ optional arguments:
 ```
 
 ```shell
+python3 yisaitong-poc.py -h
+usage: yisaitong-poc.py [-h] [-u URL] [-f FILE]
 
+亿赛通rce poc工具-不一定有漏洞
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -u URL, --url URL     指定单个url
+  -f FILE, --file FILE  指定要测试的urls文件
 ```
