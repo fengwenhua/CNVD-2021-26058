@@ -36,4 +36,4 @@ optional arguments:
   -f FILE, --file FILE  指定要测试的urls文件
 ```
 
-![微信公众号](./640.jpg)
+![微信公众号](./640.png)
