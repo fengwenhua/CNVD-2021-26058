@@ -64,7 +64,7 @@ def exp(target, core_name, cmd, logs_file):
             if result:
                 final_result = result.group(1)
             else:
-                print("没有洞，GG")
+                print("没有洞，或者命令错误")
                 return False
             print("有漏洞！！！", file=logs_file)
             print("有漏洞！！！")
