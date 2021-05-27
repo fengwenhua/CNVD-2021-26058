@@ -24,6 +24,10 @@ optional arguments:
   -k SKIP, --skip SKIP  跳过core_name
 ```
 
+![image](https://user-images.githubusercontent.com/26518808/119749983-de77da80-beca-11eb-8a45-159693feb8d3.png)
+
+![image](https://user-images.githubusercontent.com/26518808/119750248-8097c280-becb-11eb-90aa-9a1ee30ac059.png)
+
 ```shell
 python3 yisaitong-poc.py -h
 usage: yisaitong-poc.py [-h] [-u URL] [-f FILE]
@@ -35,5 +39,9 @@ optional arguments:
   -u URL, --url URL     指定单个url
   -f FILE, --file FILE  指定要测试的urls文件
 ```
+
+![image](https://user-images.githubusercontent.com/26518808/119750314-9efdbe00-becb-11eb-9fce-3f1e2cde9742.png)
+
+最后，卑微小弟在线求关注！！
 
 ![微信公众号](./640.png)
